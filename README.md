@@ -17,5 +17,6 @@ Template projektu do developmentu witryn w oparciu o angular 7 i less
 - skompilować i uruchomić aplikację
   - `ng serve --host 0.0.0.0 --port=4123` (odpowiednio zmienić port, jeśli wielu userów pracuje na tym hoście)
   - sprawdzić na `http://localhost:4123`
+  - jeśli komenda `ng` nie działa (na Windows), to użyć komendy `npm run ng serve -- --port 4444`
   
    
