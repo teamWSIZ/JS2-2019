@@ -9,7 +9,7 @@ Template projektu do developmentu witryn w oparciu o angular 7 i less
 - mieć zainstalowany git bash (można ściągnąć z https://git-scm.com/downloads)
 - otworzyć konsolę `git bash` i dać `node -v` (powinno wypisać wersję itp)
 - przejść do folderu `IdeaProjects` i wy-checkout-ować obecny projekt
-  - przez komendę `git clone https://github.com/teamWSIZ/web-start-2019.git`
+  - przez komendę `git clone https://github.com/teamWSIZ/JS2-2019.git`
 - zainstalować angular cli (komenda `ng`)
   - `npm install -g @angular/cli`
 - doczytać wszystkie pakiety (biblioteki)
