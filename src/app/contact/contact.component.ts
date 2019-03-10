@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from "../users.service";
+import {Kontakt} from "../model/kontakt";
 
 @Component({
   selector: 'app-contact',
@@ -9,12 +10,14 @@ import {UsersService} from "../users.service";
 export class ContactComponent implements OnInit {
   adres = "Avenida de la Victoria 1, Lima, Peru";
   houseNumber = 2;
-  private x = 0;
+  x = 0;
+  edytowanyKontakt: Kontakt;
 
   constructor(public usersService: UsersService) { }
 
   ngOnInit() {
     console.log('Klasa kontaktowa została zbudowana')
+    this.edytowanyKontakt = new Kontakt();
   }
 
   mojaAkcja() {

@@ -1,10 +1,17 @@
 
-<div class="row">
+<div class="row text-white">
   <div class="col-md-8">
-    Userzy: {{usersService.userzy}}
-    <ul>
-      <li *ngFor="let u of usersService.userzy"> user: {{u}}</li>
-    </ul>
+    <div class="card">
+      Userzy: {{usersService.userzy}}
+      <ul>
+        <li *ngFor="let u of usersService.userzy"> user: {{u}}</li>
+      </ul>
+    </div>
+    <div class="card">
+      Edycja kontaktu {{edytowanyKontakt.imie}}:<br>
+      <input type="text" [(ngModel)]="edytowanyKontakt.imie">
+
+    </div>
 
     <app-progress></app-progress>
 
@@ -13,14 +20,14 @@
   <div class="col-md-4">
 
     <div class="card">
-      <div class="card-header h4 bg-dark">
+      <div class="card-header h4">
         Dane kontaktowe
       </div>
-      <div class="card-body bg-dark">
+      <div class="card-body">
         Adres: {{adres}}, {{houseNumber + houseNumber}} {{x}}
       </div>
-      <div class="card-footer bg-dark text-right">
-        <button class="btn btn-outline-info" (click)="mojaAkcja()"> Click me!</button>
+      <div class="card-footer text-right">
+        <button class="btn btn-outline-light" (click)="mojaAkcja()"> Click me!</button>
       </div>
     </div>
 

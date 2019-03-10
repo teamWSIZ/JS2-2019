@@ -1,18 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
-
-//body {
-//
-//  background:  url("/assets/ac.jpeg") no-repeat center center / 100 auto;
-//}
+@very_transparent: rgba(0,0,0,0.1);
+@less_transparent: rgba(0,0,0,0.4);
 
 body {
-  background: #010301 url('assets/ac.jpeg') no-repeat;
+  background: url('assets/ac.jpeg') no-repeat;
   background-size: 2000px;
 }
 
 .trx {
-  background-color: rgba(255,255,255,0.1);
+  background-color: @very_transparent
 }
+
+.card {
+  background-color: @very_transparent;
+  border-color: #003838;
+}
+
+.card-header {
+  background-color: @less_transparent;
+}
+
+.card-footer {
+  background-color: @less_transparent;
+}
+
+input {
+  background-color: @very_transparent;
+  color: white;
+}
+
 
 html {
   //font-size: 26px;
