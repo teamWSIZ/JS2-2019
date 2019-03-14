@@ -7,13 +7,16 @@
         <li *ngFor="let u of usersService.userzy"> user: {{u}}</li>
       </ul>
     </div>
-    <div class="card">
+    <div class="card mt-1">
       Edycja kontaktu {{edytowanyKontakt.imie}}:<br>
+      <input type="text" [ngModel]="edytowanyKontakt.imie">
       <input type="text" [(ngModel)]="edytowanyKontakt.imie">
 
     </div>
 
-    <app-progress></app-progress>
+    <app-progress [name]="edytowanyKontakt.imie"
+                  [fullContact]="edytowanyKontakt"
+                  (nameChanged)="edytowanyKontakt.imie = $event"></app-progress>
 
   </div>
 

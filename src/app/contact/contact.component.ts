@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     console.log('Klasa kontaktowa została zbudowana')
-    this.edytowanyKontakt = new Kontakt();
+    this.edytowanyKontakt = new Kontakt('Akagi','');
   }
 
   mojaAkcja() {
