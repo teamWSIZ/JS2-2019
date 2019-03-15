@@ -26,5 +26,9 @@ export class TypewriterComponent implements OnInit {
     this.napisany += napis;
   }
 
+  utnijOstatnia() {
+    this.napisany = this.napisany.slice(0,-1);
+  }
+
 
 }
