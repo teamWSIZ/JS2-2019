@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProgressComponent } from './progress/progress.component';
 import {FormsModule} from "@angular/forms";
+import { IndeksComponent } from './indeks/indeks.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     ContactComponent,
     MenuComponent,
-    ProgressComponent
+    ProgressComponent,
+    IndeksComponent
   ],
   imports: [
     BrowserModule,

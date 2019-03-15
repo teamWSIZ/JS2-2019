@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="col-sm-9">
+    <div class="card">
+      <div class="card-header h4">
+        Oceny
+      </div>
+      <div class="card-body">
+        <table class="table table-sm table-hover text-white">
+          <thead>
+          <tr>
+            <td width="40%">Przedmiot</td>
+            <td width="30%">Wpisujący</td>
+            <td width="30%">Ocena</td>
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr *ngFor="let n of notes">
+            <td>{{d.lecDet.get(n.przedmiotid).nazwa}}</td>
+<!--            <td>{{n.przedmiotid}}</td>-->
+            <td>{{n.wykladowcaid}}</td>
+            <td>{{d.typDet.get(n.ocenatypid).oznaczenie}}</td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 text-white">
+    ########## {{d.lecDet.get(473)}}
+
+  </div>
+</div>
