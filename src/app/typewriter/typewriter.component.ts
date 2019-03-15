@@ -30,5 +30,8 @@ export class TypewriterComponent implements OnInit {
     this.napisany = this.napisany.slice(0,-1);
   }
 
+  naDuze() {
+    this.napisany = this.napisany.toUpperCase();
+  }
 
 }
