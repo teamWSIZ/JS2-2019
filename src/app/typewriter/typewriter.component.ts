@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./typewriter.component.less']
 })
 export class TypewriterComponent implements OnInit {
+  //to są zmienne...
   napisany: string;
+  capital: number = 0;  //0: małe, 1: duża, potem małe, 2: ciągle duże
+
 
   constructor() { }
 
@@ -23,6 +26,15 @@ export class TypewriterComponent implements OnInit {
   }
 
   dodajNapis(napis: string) {
+    if (this.capital>0) {
+      napis = napis.toUpperCase();
+      //trzeba dodać if .... jeśli jest 1, to ma zamienić na 0
+      if (this.capital==1) {
+        this.capital = 0;
+      }
+    } else {
+      napis = napis.toLowerCase();
+    }
     this.napisany += napis;
   }
 
@@ -31,7 +43,11 @@ export class TypewriterComponent implements OnInit {
   }
 
   naDuze() {
-    this.napisany = this.napisany.toUpperCase();
+    // 0 -> 1 -> 2 -> 0
+    this.capital += 1;  //dodajemy 1 do zmiennej capital
+    if (this.capital == 3) {
+      this.capital = 0;
+    }
   }
 
 }

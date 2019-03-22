@@ -8,7 +8,11 @@
     <button class="btn btn-outline-info ml-1" (click)="dodajNapis('b')"> b </button>
     <button class="btn btn-outline-info ml-1" (click)="utnijOstatnia()">
       <i class="fas fa-arrow-left"></i>  </button>
-    <button class="btn btn-outline-info ml-1" (click)="naDuze()">
-      <i class="fas fa-arrow-up"></i>  </button>
+    <button class="btn btn-outline-info ml-1" style="width: 60px" *ngIf="capital==0" (click)="naDuze()">
+      <i class="fas fa-arrow-up"></i>a  </button>
+    <button class="btn btn-outline-info ml-1" style="width: 60px" *ngIf="capital==1" (click)="naDuze()">
+      <i class="fas fa-arrow-up"></i>A  </button>
+    <button class="btn btn-info ml-1" style="width: 60px" *ngIf="capital===2" (click)="naDuze()">
+      <i class="fas fa-arrow-up"></i>A  </button>
   </div>
 </div>
