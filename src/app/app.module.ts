@@ -9,6 +9,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ProgressComponent } from './progress/progress.component';
 import { ZegarComponent } from './zegar/zegar.component';
 import { TypewriterComponent } from './typewriter/typewriter.component';
+import { BiedronkaComponent } from './biedronka/biedronka.component';
+import { KasaComponent } from './kasa/kasa.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TypewriterComponent } from './typewriter/typewriter.component';
     MenuComponent,
     ProgressComponent,
     ZegarComponent,
-    TypewriterComponent
+    TypewriterComponent,
+    BiedronkaComponent,
+    KasaComponent
   ],
   imports: [
     BrowserModule,
