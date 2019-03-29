@@ -3,11 +3,14 @@
     Kasa nr {{nr}}
   </div>
   <div class="card-body  bg-dark">
-    (klienci)
+
+    <i *ngFor="let c of clients" class="ml-1 fas fa-user-clock"></i>
+
   </div>
+
   <div class="card-footer  bg-dark">
-    <button class="btn btn-outline-info">(+)</button>
-    <button class="btn btn-outline-info">(-)</button>
+    <button class="btn btn-outline-info" (click)="clients.push('aa')">(+)</button>
+    <button class="btn btn-outline-info" (click)="removeClient()">(-)</button>
   </div>
 
 
