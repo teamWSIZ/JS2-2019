@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-kasa',
@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kasa.component.less']
 })
 export class KasaComponent implements OnInit {
-  nr: string;
+  @Input() nr: string;
   clients: string[];
 
   constructor() { }
 
   ngOnInit() {
-    this.nr = '2';
     this.clients = ['klient1',''];
   }
 
