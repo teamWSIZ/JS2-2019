@@ -6,8 +6,9 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./kasa.component.less']
 })
 export class KasaComponent implements OnInit {
-  @Input() nr: string;
+  @Input() nr: string;  //nazwa kasy
   clients: string[];
+  @Input() stanKasy: number = 0;   //ustalamy, że to będzie liczba, i na początku ma być zero
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class KasaComponent implements OnInit {
 
   removeClient() {
     this.clients = this.clients.slice(0,-1);
+    this.stanKasy += 10;
   }
 
 

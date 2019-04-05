@@ -11,6 +11,7 @@ import { ZegarComponent } from './zegar/zegar.component';
 import { TypewriterComponent } from './typewriter/typewriter.component';
 import { BiedronkaComponent } from './biedronka/biedronka.component';
 import { KasaComponent } from './kasa/kasa.component';
+import { HalaComponent } from './hala/hala.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { KasaComponent } from './kasa/kasa.component';
     ZegarComponent,
     TypewriterComponent,
     BiedronkaComponent,
-    KasaComponent
+    KasaComponent,
+    HalaComponent
   ],
   imports: [
     BrowserModule,
