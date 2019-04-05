@@ -21,5 +21,14 @@ export class KasaComponent implements OnInit {
     this.stanKasy += 10;
   }
 
-
 }
+
+
+/**
+ * - dodać zmienną clients do hali, ustawić początkowo na = ['aa']
+ * - wyświetlić ikonkli klientów pod obrazkiem półki warzywnej
+ * - dodać przycisk dodawania klientów
+ * - dodać przycisk "klient kończy zakupy"
+ *
+ *
+ */
