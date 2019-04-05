@@ -1,16 +1,13 @@
 <div class="card mt-1">
-  <div class="card-header bg-dark" style="height: 80px; background: url('../../assets/biedronka_logo.png') no-repeat;
-  background-position: center;
-background-size: 170px"></div>
-  <div class="card-body bg-dark" style="height: 100px; background: url('../../assets/grocery_large.jpg') no-repeat;
-  background-position: center;
-background-size: 300px">
-
-
-    <i *ngFor="let c of clients" class="ml-1 fas fa-user-tag"></i>
-
-
+  <div class="card-header bg-dark text-center">
+    <img src="../../assets/biedronka_logo.png" height="120px">
   </div>
+
+  <div class="card-body bg-dark">
+    <img src="../../assets/grocery_large.jpg" width="100%" class="mb-1">
+    <i *ngFor="let c of clients" class="ml-1 fa-2x fas fa-user-tag"></i>
+  </div>
+
   <div class="card-footer bg-dark text-center">
     <button class="btn btn-outline-info" (click)="nowyKlient()"> Nowy klient </button>
     <button class="btn btn-outline-info ml-1" (click)="klientKonczy()"> Klient kończy zakupy </button>

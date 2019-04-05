@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BiedronkaComponent implements OnInit {
   kolejki: string[][];
-  n = 3;
+  liczbaKas = 4;
 
   constructor() {
     this.kolejki = [];
-    for (let i = 0; i < this.n; i++) {
+    for (let i = 0; i < this.liczbaKas; i++) {
       this.kolejki.push(['klient0']);
     }
   }
@@ -20,8 +20,8 @@ export class BiedronkaComponent implements OnInit {
   }
 
   moveClientToCheckout($event: string) {
-    console.log('Klient kończy zakupy: ' + $event);
-    this.kolejki[1].push($event);
-
+    const wybranaKolejka = Math.floor(Math.random() * this.liczbaKas);
+    console.log(`Klient ${$event} kończy zakupy; przechodzi do kolejki ${wybranaKolejka}`);
+    this.kolejki[wybranaKolejka].push($event);
   }
 }

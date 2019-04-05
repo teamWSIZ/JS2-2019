@@ -18,13 +18,14 @@ export class HalaComponent implements OnInit {
   }
 
   nowyKlient() {
-    this.clients.push('klient');
+    this.cnt++;
+    this.clients.push('klient' + this.cnt);
   }
 
   klientKonczy() {
-    this.cnt++;
-    const nazwaKlienta = 'klient' + this.cnt;
-    this.clientCheckout.emit(nazwaKlienta);
+    const last = this.clients[this.clients.length-1];
+    this.clientCheckout.emit(last);
+    this.clients.pop();
   }
 
 }

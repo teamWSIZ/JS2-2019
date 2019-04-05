@@ -1,16 +1,10 @@
 <div class="row">
-  <div class="col-md-3">
-    aa
-  </div>
-  <div class="col-md-5">
+  <div class="col-md-8">
     <app-hala (clientCheckout)="moveClientToCheckout($event)"></app-hala>
   </div>
   <div class="col-md-4">
     <button class="btn btn-info mt-2" style="width: 100%">Kasy</button>
 
-    <app-kasa [nr]="'pierwsza'" [stanKasy]="10"></app-kasa>
-    <app-kasa [nr]="'druga'" [kolejka]="kolejki[1]"></app-kasa>
-    <app-kasa [nr]="'nieczynna'"></app-kasa>
-    <app-kasa [nr]="'zapasowa'"></app-kasa>
+    <app-kasa *ngFor="let k of kolejki; index as i" [nr]="'kasa'+i" [kolejka]="k"></app-kasa>
   </div>
 </div>

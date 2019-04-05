@@ -16,7 +16,8 @@ export class KasaComponent implements OnInit {
   }
 
   removeClient() {
-    this.kolejka = this.kolejka.slice(0,-1);
+    if (this.kolejka.length==0) return;
+    this.kolejka.pop();
     this.stanKasy += 10;
   }
 
