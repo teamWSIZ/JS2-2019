@@ -4,7 +4,16 @@
 background-size: 170px"></div>
   <div class="card-body bg-dark" style="height: 100px; background: url('../../assets/grocery_large.jpg') no-repeat;
   background-position: center;
-background-size: 300px"></div>
-  <div class="card-footer bg-dark"></div>
+background-size: 300px">
+
+
+    <i *ngFor="let c of clients" class="ml-1 fas fa-user-tag"></i>
+
+
+  </div>
+  <div class="card-footer bg-dark text-center">
+    <button class="btn btn-outline-info" (click)="nowyKlient()"> Nowy klient </button>
+    <button class="btn btn-outline-info ml-1" (click)="klientKonczy()"> Klient kończy zakupy </button>
+  </div>
 
 </div>

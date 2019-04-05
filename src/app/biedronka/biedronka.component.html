@@ -3,13 +3,13 @@
     aa
   </div>
   <div class="col-md-5">
-    <app-hala></app-hala>
+    <app-hala (clientCheckout)="moveClientToCheckout($event)"></app-hala>
   </div>
   <div class="col-md-4">
     <button class="btn btn-info mt-2" style="width: 100%">Kasy</button>
 
     <app-kasa [nr]="'pierwsza'" [stanKasy]="10"></app-kasa>
-    <app-kasa [nr]="'druga'"></app-kasa>
+    <app-kasa [nr]="'druga'" [kolejka]="kolejki[1]"></app-kasa>
     <app-kasa [nr]="'nieczynna'"></app-kasa>
     <app-kasa [nr]="'zapasowa'"></app-kasa>
   </div>
