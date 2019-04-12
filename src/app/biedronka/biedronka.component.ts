@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Klient} from "../model/klient";
 
 @Component({
   selector: 'app-biedronka',
@@ -6,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./biedronka.component.less']
 })
 export class BiedronkaComponent implements OnInit {
-  kolejki: string[][];
+  kolejki: Klient[][];  //tu mają być klienci czekający w każdej z kas;
+  // kolejki[0] to tablica (Klient[]) klientów czekających w kasie nr 0
   liczbaKas = 4;
 
   constructor() {
     this.kolejki = [];
     for (let i = 0; i < this.liczbaKas; i++) {
-      this.kolejki.push(['klient0']);
+      this.kolejki.push([]);
     }
   }
 
@@ -23,9 +25,9 @@ export class BiedronkaComponent implements OnInit {
     return Math.floor(Math.random() * this.liczbaKas);
   }
 
-  moveClientToCheckout($event: string) {
+  moveClientToCheckout($event: Klient) {
     const wybranaKolejka = this.generateRandomCheckout();
-    console.log(`Klient ${$event} kończy zakupy; przechodzi do kolejki ${wybranaKolejka}`);
+    console.log(`Klient ${$event.name} kończy zakupy; przechodzi do kolejki ${wybranaKolejka}`);
     this.kolejki[wybranaKolejka].push($event);
   }
 

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Klient} from "../model/klient";
 
 @Component({
   selector: 'app-kasa',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class KasaComponent implements OnInit {
   @Input() nr: string;  //nazwa kasy
-  @Input() kolejka: string[];
+  @Input() kolejka: Klient[];
   @Input() stanKasy: number = 0;   //ustalamy, że to będzie liczba, i na początku ma być zero
 
   constructor() { }
@@ -22,7 +23,7 @@ export class KasaComponent implements OnInit {
   }
 
   addClient(aa: string) {
-    this.kolejka.push(aa);
+    this.kolejka.push(new Klient('aa',0));
   }
 }
 
