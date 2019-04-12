@@ -19,9 +19,15 @@ export class BiedronkaComponent implements OnInit {
   ngOnInit() {
   }
 
+  generateRandomCheckout() {
+    return Math.floor(Math.random() * this.liczbaKas);
+  }
+
   moveClientToCheckout($event: string) {
-    const wybranaKolejka = Math.floor(Math.random() * this.liczbaKas);
+    const wybranaKolejka = this.generateRandomCheckout();
     console.log(`Klient ${$event} kończy zakupy; przechodzi do kolejki ${wybranaKolejka}`);
     this.kolejki[wybranaKolejka].push($event);
   }
+
+
 }

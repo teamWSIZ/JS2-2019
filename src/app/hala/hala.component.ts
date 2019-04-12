@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Klient} from "../model/klient";
 
 @Component({
   selector: 'app-hala',
@@ -6,7 +7,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./hala.component.less']
 })
 export class HalaComponent implements OnInit {
-  clients: string[];
+  clients: Klient[];
   cnt = 0;
   @Output() clientCheckout = new EventEmitter();
 
@@ -14,12 +15,14 @@ export class HalaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.clients = ['aa'];
+    this.clients = [];
   }
 
   nowyKlient() {
     this.cnt++;
-    this.clients.push('klient' + this.cnt);
+    let nowy = new Klient('klient' + this.cnt, (this.cnt % 5));
+    this.clients.push(nowy);
+    console.log('W tablicy clients:' + JSON.stringify(this.clients));
   }
 
   klientKonczy() {

@@ -5,7 +5,7 @@
 
   <div class="card-body bg-dark">
     <img src="../../assets/grocery_large.jpg" width="100%" class="mb-1">
-    <i *ngFor="let c of clients" class="ml-1 fa-2x fas fa-user-tag"></i>
+    <i *ngFor="let c of clients" class="ml-1 fa-2x fas fa-user-tag" [title]="c.name"></i>
   </div>
 
   <div class="card-footer bg-dark text-center">
