@@ -12,6 +12,7 @@ import { TypewriterComponent } from './typewriter/typewriter.component';
 import { BiedronkaComponent } from './biedronka/biedronka.component';
 import { KasaComponent } from './kasa/kasa.component';
 import { HalaComponent } from './hala/hala.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HalaComponent } from './hala/hala.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [MenuComponent],
   bootstrap: [AppComponent]

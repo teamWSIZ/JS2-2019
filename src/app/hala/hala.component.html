@@ -11,12 +11,13 @@
   </div>
 
   <div class="card-footer bg-dark text-center">
+    <input class="ml-1" [(ngModel)]="howFrequent">
     <button class="btn btn-outline-info" (click)="nowyKlient()"> Nowy klient </button>
     <button class="btn btn-outline-info ml-1" (click)="klientKonczy()"> Klient kończy zakupy </button>
     <button class="btn btn-outline-info ml-1" (click)="closeShop()"> Zamknij sklep </button>
+    <button class="btn btn-outline-info ml-1" (click)="openShop()"> Otwórz sklep </button>
+    <hr/>
+    Zmienna = {{howFrequent}}
   </div>
-  <p>
-<!--    <input (keydown)="onKey($event)">-->
-  </p>
 
 </div>

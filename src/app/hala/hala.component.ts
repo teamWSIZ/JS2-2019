@@ -13,6 +13,7 @@ export class HalaComponent implements OnInit {
   @Output() clientCheckout = new EventEmitter();
   newClientEmitter: Observable<number>;
   reactToClients: Subscription;
+  howFrequent: number;
 
 
   constructor() { }
@@ -45,5 +46,9 @@ export class HalaComponent implements OnInit {
 
   onKey($event: KeyboardEvent) {
     console.log($event.key);
+  }
+
+  openShop() {
+    //tu wpisać kod do wykonania przy uruchamianiu sklepu
   }
 }
