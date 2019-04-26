@@ -9,12 +9,15 @@ import {Klient} from "../model/klient";
 export class BiedronkaComponent implements OnInit {
   kolejki: Klient[][];  //tu mają być klienci czekający w każdej z kas;
   // kolejki[0] to tablica (Klient[]) klientów czekających w kasie nr 0
+  stanyKas: number[];
   liczbaKas = 4;
 
   constructor() {
     this.kolejki = [];
+    this.stanyKas = [];
     for (let i = 0; i < this.liczbaKas; i++) {
       this.kolejki.push([]);
+      this.stanyKas.push(0);
     }
   }
 

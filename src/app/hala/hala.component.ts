@@ -13,7 +13,7 @@ export class HalaComponent implements OnInit {
   @Output() clientCheckout = new EventEmitter();
   newClientEmitter: Observable<number>;
   reactToClients: Subscription;
-  howFrequent: number;
+  howFrequent: number = 1000;
 
 
   constructor() { }

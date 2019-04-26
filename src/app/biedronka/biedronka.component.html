@@ -4,7 +4,11 @@
   </div>
   <div class="col-md-4">
     <button class="btn btn-info mt-2" style="width: 100%">Kasy</button>
+    <p>
+      Stany kas = {{stanyKas}}
+    </p>
+    <app-kasa *ngFor="let k of kolejki; index as i" [nr]="'kasa'+i" [kolejka]="k" >
 
-    <app-kasa *ngFor="let k of kolejki; index as i" [nr]="'kasa'+i" [kolejka]="k"></app-kasa>
+    </app-kasa>
   </div>
 </div>
