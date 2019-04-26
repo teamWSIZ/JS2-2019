@@ -19,7 +19,7 @@ export class HalaComponent implements OnInit {
 
   ngOnInit() {
     this.clients = [];
-    this.newClientEmitter = interval(1000);
+    this.newClientEmitter = interval(200);
     this.reactToClients = this.newClientEmitter.subscribe(n => {
       console.log(n);
       this.nowyKlient();
