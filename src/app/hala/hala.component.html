@@ -1,16 +1,22 @@
-<div class="card mt-1">
+<div class="card mt-1" >
   <div class="card-header bg-dark text-center">
     <img src="../../assets/biedronka_logo.png" height="120px">
   </div>
 
-  <div class="card-body bg-dark">
+  <div class="card-body bg-dark" >
     <img src="../../assets/grocery_large.jpg" width="100%" class="mb-1">
-    <i *ngFor="let c of clients" class="ml-1 fa-2x fas fa-user-tag" [title]="c.name"></i>
+    <p style="min-height: 80px">
+      <i *ngFor="let c of clients" class="ml-1 fa-2x fas fa-user-tag" [title]="c.name"></i>
+    </p>
   </div>
 
   <div class="card-footer bg-dark text-center">
     <button class="btn btn-outline-info" (click)="nowyKlient()"> Nowy klient </button>
     <button class="btn btn-outline-info ml-1" (click)="klientKonczy()"> Klient kończy zakupy </button>
+    <button class="btn btn-outline-info ml-1" (click)="closeShop()"> Zamknij sklep </button>
   </div>
+  <p>
+<!--    <input (keydown)="onKey($event)">-->
+  </p>
 
 </div>
