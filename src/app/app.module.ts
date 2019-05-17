@@ -13,6 +13,9 @@ import { BiedronkaComponent } from './biedronka/biedronka.component';
 import { KasaComponent } from './kasa/kasa.component';
 import { HalaComponent } from './hala/hala.component';
 import {FormsModule} from "@angular/forms";
+import { BoksComponent } from './boks/boks.component';
+import { DeAdminPanelComponent } from './de-admin-panel/de-admin-panel.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import {FormsModule} from "@angular/forms";
     TypewriterComponent,
     BiedronkaComponent,
     KasaComponent,
-    HalaComponent
+    HalaComponent,
+    BoksComponent,
+    DeAdminPanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [MenuComponent],

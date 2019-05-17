@@ -20,6 +20,11 @@ export class ContactComponent implements OnInit {
   mojaAkcja() {
     this.x = this.x + 1;
     console.log('Akcja wykonana! Button został naciśnięty ' + this.x + ' razy');
+    this.addTwoNumbers(2,3);
+  }
+
+  addTwoNumbers(a: number, b: number) {
+    return a + b;
   }
 
 }
