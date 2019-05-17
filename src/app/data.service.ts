@@ -12,8 +12,10 @@ export class DataService {
   constructor(private g : GlobalsService, private http : HttpClient) {}
 
    getUsers() : Observable<DeUser[]> {
+    //zbieramy przedmiotów z http://10.10.0.55:8082/subjects?token=123
+    //zbieramy przedmiotów z http://10.10.0.55:8082/users?token=123
     const url = this.g.q(`/users?`);
-    console.log(`url: ${url}`)
+    console.log(`url: ${url}`);
     return this.http.get<DeUser[]>(url);
     // return this.http.post<Note>(url, note);
   }

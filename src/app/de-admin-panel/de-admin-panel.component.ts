@@ -3,6 +3,7 @@ import {DataService} from "../data.service";
 import {DeUser} from "../model/de-user";
 import {HttpClient} from "@angular/common/http";
 import {Post} from "../model/post";
+import {LogerService} from "../loger.service";
 
 @Component({
   selector: 'app-de-admin-panel',
@@ -11,7 +12,10 @@ import {Post} from "../model/post";
 })
 export class DeAdminPanelComponent implements OnInit {
   users : DeUser[];
-  constructor(private d : DataService, private http: HttpClient) { }
+
+  constructor(private d : DataService,
+              private http: HttpClient,
+              public loger: LogerService) { }
 
   ngOnInit() {
   }
@@ -30,6 +34,10 @@ export class DeAdminPanelComponent implements OnInit {
     this.http.get<Post[]>(url).subscribe(res=>{
       console.log(`posts: ${JSON.stringify(res)}`)
     })
+  }
+
+  wywolajLogowanieTekstu() {
+    this.loger.zaloguj('testowa wiadomość');
   }
 
 }
