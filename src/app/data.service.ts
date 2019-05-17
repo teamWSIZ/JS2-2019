@@ -3,6 +3,7 @@ import {Observable} from "rxjs";
 import {DeUser} from "./model/de-user";
 import {GlobalsService} from "./globals.service";
 import {HttpClient} from "@angular/common/http";
+import {DeSubject} from "./model/de-subject";
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,12 @@ export class DataService {
     return this.http.get<DeUser[]>(url);
     // return this.http.post<Note>(url, note);
   }
+
+  getSubjects() : Observable<DeSubject[]> {
+    const url = this.g.q(`/subjects?`);
+    console.log(`url: ${url}`);
+    return this.http.get<DeSubject[]>(url);
+  }
+
 
 }

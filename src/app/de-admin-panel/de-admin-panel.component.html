@@ -5,4 +5,9 @@
     <button class="btn-outline-info btn" (click)="loadPosts()">Wczytaj posty</button>
     <button class="btn-outline-info btn" (click)="wywolajLogowanieTekstu()">Zaloguj</button>
   </div>
+  <div class="bg-dark card-footer">
+    <ul>
+      <li *ngFor="let s of subjects">{{s.subjectName}}</li>
+    </ul>
+  </div>
 </div>

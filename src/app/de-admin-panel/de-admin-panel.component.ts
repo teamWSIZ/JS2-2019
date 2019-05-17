@@ -4,6 +4,7 @@ import {DeUser} from "../model/de-user";
 import {HttpClient} from "@angular/common/http";
 import {Post} from "../model/post";
 import {LogerService} from "../loger.service";
+import {DeSubject} from "../model/de-subject";
 
 @Component({
   selector: 'app-de-admin-panel',
@@ -11,13 +12,15 @@ import {LogerService} from "../loger.service";
   styleUrls: ['./de-admin-panel.component.less']
 })
 export class DeAdminPanelComponent implements OnInit {
-  users : DeUser[];
+  users : DeUser[] = [];
+  subjects: DeSubject[] = [];
 
   constructor(private d : DataService,
               private http: HttpClient,
               public loger: LogerService) { }
 
   ngOnInit() {
+    this.loadSubjects();
   }
 
   loadUsers() {
@@ -28,6 +31,14 @@ export class DeAdminPanelComponent implements OnInit {
         console.log(`Loaded ${userz.length} users: ${JSON.stringify(userz)}`);
       })
   }
+
+  loadSubjects() {
+    this.d.getSubjects()
+      .subscribe(ss => {
+        this.subjects = ss;
+      })
+  }
+
 
   loadPosts() {
     let url = 'https://jsonplaceholder.typicode.com/posts';
