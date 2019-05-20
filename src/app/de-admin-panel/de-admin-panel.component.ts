@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Post} from "../model/post";
 import {LogerService} from "../loger.service";
 import {DeSubject} from "../model/de-subject";
+import {DeGroup} from "../model/de-group";
 
 @Component({
   selector: 'app-de-admin-panel',
@@ -14,6 +15,8 @@ import {DeSubject} from "../model/de-subject";
 export class DeAdminPanelComponent implements OnInit {
   users : DeUser[] = [];
   subjects: DeSubject[] = [];
+  private groups: DeGroup[] = [];
+  username: string;
 
   constructor(private d : DataService,
               private http: HttpClient,
@@ -24,19 +27,18 @@ export class DeAdminPanelComponent implements OnInit {
   }
 
   loadUsers() {
-    console.log('Loading users...');
     this.d.getUsers()
-      .subscribe(userz => {
-        this.users = userz;
-        console.log(`Loaded ${userz.length} users: ${JSON.stringify(userz)}`);
-      })
+      .subscribe(resp => this.users = resp);
   }
 
   loadSubjects() {
     this.d.getSubjects()
-      .subscribe(ss => {
-        this.subjects = ss;
-      })
+      .subscribe(resp => this.subjects = resp);
+  }
+
+  loadGroups() {
+    this.d.getGroups()
+      .subscribe(resp => this.groups = resp);
   }
 
 
@@ -51,4 +53,9 @@ export class DeAdminPanelComponent implements OnInit {
     this.loger.zaloguj('testowa wiadomość');
   }
 
+  reload() {
+    this.loadUsers();
+    this.loadGroups();
+    this.loadSubjects();
+  }
 }

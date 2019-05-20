@@ -1,9 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-//body {
-//
-//  background:  url("/assets/ac.jpeg") no-repeat center center / 100 auto;
-//}
+//@import (inline) '~@ng-bootstrap';
+//@import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+//@import "../node_modules/bootstrap/scss/_card.scss";
 
 body {
   background: #010301 url('assets/ac.jpeg') no-repeat;
@@ -24,6 +23,25 @@ input {
   color: white;
 }
 
+.aa {
+  color: blue;
+}
+
+.card, .card-header, .card-body, .card-footer {
+  //add bg-dark to all card classes; todo: replace by bg-dark somehow
+  background-color: #343a40;
+}
+
+//neh... wow do it...
+//.ccc {
+//  &:extend(.card-header all, .bg-dark all);
+//  background-color: #0e4237;
+//}
+
+
+.clickable {
+  cursor: pointer;
+}
 
 
 html {

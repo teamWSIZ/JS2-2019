@@ -1,13 +1,120 @@
 
-<div class="bg-dark card">
-  <div class="bg-dark card-body">
-    <button class="btn-outline-info btn" (click)="loadUsers()">Wczytaj userow</button>
-    <button class="btn-outline-info btn" (click)="loadPosts()">Wczytaj posty</button>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn-outline-info btn" (click)="reload()">Reload</button>
     <button class="btn-outline-info btn" (click)="wywolajLogowanieTekstu()">Zaloguj</button>
+    {{username}}
+
+
+
   </div>
-  <div class="bg-dark card-footer">
-    <ul>
-      <li *ngFor="let s of subjects">{{s.subjectName}}</li>
-    </ul>
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header text-center">
+        <h4>Użytkownicy</h4>
+      </div>
+      <div class="card-body bg-dark">
+        <table class="table table-sm table-hover table-dark">
+          <thead>
+          <td>Imię</td>
+          <td>Nazwisko</td>
+          <td>Grupa</td>
+          <td>Aktywny</td>
+          </thead>
+          <tbody>
+          <tr *ngFor="let u of users">
+            <td>{{u.firstName}}</td>
+            <td>{{u.lastName}}</td>
+            <td>{{u.gid}}</td>
+            <td> <input type="checkbox"  [(ngModel)]="u.active"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-footer bg-dark">
+        <button class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
+          Dodaj użytkownika
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header text-center">
+        <h4>Grupy</h4>
+      </div>
+      <div class="card-body bg-dark">
+        <table class="table table-sm table-hover table-dark">
+          <thead>
+          <td>Id</td>
+          <td>Nazwa</td>
+          <td>Aktywna</td>
+          </thead>
+          <tbody>
+          <tr *ngFor="let u of groups">
+            <td>{{u.gid}}</td>
+            <td>{{u.name}}</td>
+            <td> <input type="checkbox"  [(ngModel)]="u.active"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-footer bg-dark">
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade text-dark" id="exampleModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog bg-dark" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title">Dodaj użytkownika</h5>
+        <button type="button" class="close text-white" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bg-dark">
+        <input [(ngModel)]="username">
+
+        <span class="dropdown">
+              <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
+                Selection..
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item clickable" (click)="username='Aleph'">Action א</a>
+                <a class="dropdown-item clickable" (click)="username='Bet'">Action ב</a>
+                <a class="dropdown-item clickable" (click)="username='Gimel'">Action ג</a>
+                <a class="dropdown-item clickable" (click)="username='Dalet'">Action ד</a>
+              </div>
+            </span>
+        <span class="dropdown">
+              <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
+                Selection 2...
+              </button>
+              <div class="dropdown-menu" >
+                <a class="dropdown-item clickable" >Action1</a>
+                <a class="dropdown-item clickable" >Action2</a>
+                <a class="dropdown-item clickable" >Action3</a>
+              </div>
+            </span>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>
