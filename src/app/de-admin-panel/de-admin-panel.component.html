@@ -37,6 +37,8 @@
         <button class="btn btn-outline-info" data-toggle="modal" data-target="#addUserModal">
           Dodaj użytkownika
         </button>
+        <br>
+        {{showUser()}}
       </div>
 
     </div>
@@ -145,12 +147,13 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Porzuć</button>
-        <button type="button" class="btn btn-primary">Zapisz</button>
+        <button type="button" class="btn btn-primary" (click)="saveNewUser()">Zapisz</button>
       </div>
     </div>
   </div>
 </div>
 
+<!---->
 <div class="modal text-dark" id="addGroupModal" tabindex="-1" role="dialog">
   <div class="modal-dialog bg-dark" role="document">
     <div class="modal-content bg-dark">

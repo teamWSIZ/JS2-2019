@@ -33,8 +33,8 @@ export class DataService {
     return this.http.get<DeGroup[]>(url);
   }
 
-
-
-
-
+  saveUser(u : DeUser) : Observable<DeUser> {
+    const url = this.g.q(`/users?`);
+    return this.http.post<DeUser>(url, u);
+  }
 }

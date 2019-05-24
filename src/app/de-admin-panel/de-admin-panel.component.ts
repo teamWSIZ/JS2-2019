@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
 import {DeUser} from "../model/de-user";
 import {HttpClient} from "@angular/common/http";
@@ -13,15 +13,16 @@ import {DeGroup} from "../model/de-group";
   styleUrls: ['./de-admin-panel.component.less']
 })
 export class DeAdminPanelComponent implements OnInit {
-  users : DeUser[] = [];
+  users: DeUser[] = [];
   subjects: DeSubject[] = [];
   private groups: DeGroup[] = [];
   username: string;
   nuser: DeUser;
 
-  constructor(private d : DataService,
+  constructor(private d: DataService,
               private http: HttpClient,
-              public loger: LogerService) { }
+              public loger: LogerService) {
+  }
 
   ngOnInit() {
     this.loadSubjects();
@@ -46,7 +47,7 @@ export class DeAdminPanelComponent implements OnInit {
 
   loadPosts() {
     let url = 'https://jsonplaceholder.typicode.com/posts';
-    this.http.get<Post[]>(url).subscribe(res=>{
+    this.http.get<Post[]>(url).subscribe(res => {
       console.log(`posts: ${JSON.stringify(res)}`)
     })
   }
@@ -59,5 +60,19 @@ export class DeAdminPanelComponent implements OnInit {
     this.loadUsers();
     this.loadGroups();
     this.loadSubjects();
+  }
+
+  saveNewUser() {
+    console.log('Zapisuję nowego user');
+    this.nuser.active = true;
+    this.d.saveUser(this.nuser)
+      .subscribe(u => {
+        console.log(`Zapisano usera: ${JSON.stringify(u)}`);
+        this.loadUsers();
+      })
+  }
+
+  showUser() {
+    return JSON.stringify(this.nuser)
   }
 }
