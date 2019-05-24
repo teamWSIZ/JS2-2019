@@ -25,6 +25,7 @@ export class DeAdminPanelComponent implements OnInit {
 
   ngOnInit() {
     this.loadSubjects();
+    this.nuser = new DeUser();
   }
 
   loadUsers() {
