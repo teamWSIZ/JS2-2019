@@ -62,6 +62,7 @@ export class DeAdminPanelComponent implements OnInit {
     this.loadSubjects();
   }
 
+  //Funkcja zapisuje w systemie (na backendzie) usera który jest w zmiennej `this.nuser`
   saveNewUser() {
     console.log('Zapisuję nowego user');
     this.nuser.active = true;
@@ -75,4 +76,15 @@ export class DeAdminPanelComponent implements OnInit {
   showUser() {
     return JSON.stringify(this.nuser)
   }
+
+  countOfActiveUsers() : number {
+    let count = 0;
+    for(let u of this.users) {
+      if (u.active === true) {
+        count++;
+      }
+    }
+    return count;
+  }
+
 }

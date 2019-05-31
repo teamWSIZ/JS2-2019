@@ -27,4 +27,7 @@ export class ContactComponent implements OnInit {
     return a + b;
   }
 
+  mouseEntered() {
+    console.log(`....!!¬`)
+  }
 }
