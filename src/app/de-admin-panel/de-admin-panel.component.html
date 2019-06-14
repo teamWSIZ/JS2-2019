@@ -79,7 +79,7 @@
 
 </div>
 
-<!-- Modal -->
+<!-- Modal: dodawanie usera -->
 <!--`fade` disabled-->
 <div class="modal text-dark" id="addUserModal" tabindex="-1" role="dialog">
   <div class="modal-dialog bg-dark" role="document">
@@ -120,19 +120,30 @@
 
 
         <input [(ngModel)]="username" placeholder="nazwisko">
+        <p class="text-white">
+          ffff {{dziwnyNapis}}
+
+        </p>
 
         <span class="dropdown">
+
               <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
-                Selection..
+<!--                <span *ngIf="groupOfEditedUser!==undefined">-->
+<!--                  {{groupOfEditedUser.name}}-->
+<!--                </span>-->
+<!--                <span *ngIf="groupOfEditedUser===undefined">-->
+<!--                  '-&#45;&#45;wybierz-&#45;&#45;'-->
+<!--                </span>-->
+                {{groupOfEditedUser ? groupOfEditedUser.name : '--wybierz--'}}
               </button>
+
               <div class="dropdown-menu">
-                <a class="dropdown-item clickable" (click)="username='Aleph'">Action א</a>
-                <a class="dropdown-item clickable" (click)="username='Bet'">Action ב</a>
-                <a class="dropdown-item clickable" (click)="username='Gimel'">Action ג</a>
-                <a class="dropdown-item clickable" (click)="username='Dalet'">Action ד</a>
+                <a class="dropdown-item clickable"
+                   *ngFor="let gg of groups" (click)="groupOfEditedUser=gg">{{gg.name}}</a>
               </div>
             </span>
-        <span class="dropdown">
+
+            <span class="dropdown">
               <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
                 Selection 2...
               </button>
@@ -153,7 +164,7 @@
   </div>
 </div>
 
-<!---->
+<!--Dodawanie grupy-->
 <div class="modal text-dark" id="addGroupModal" tabindex="-1" role="dialog">
   <div class="modal-dialog bg-dark" role="document">
     <div class="modal-content bg-dark">

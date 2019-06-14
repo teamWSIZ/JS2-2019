@@ -15,9 +15,11 @@ import {DeGroup} from "../model/de-group";
 export class DeAdminPanelComponent implements OnInit {
   users: DeUser[] = [];
   subjects: DeSubject[] = [];
-  private groups: DeGroup[] = [];
+  groups: DeGroup[] = [];
   username: string;
   nuser: DeUser;
+  groupOfEditedUser: DeGroup;
+  dziwnyNapis = 'dziwna treść';
 
   constructor(private d: DataService,
               private http: HttpClient,
@@ -25,7 +27,7 @@ export class DeAdminPanelComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadSubjects();
+    this.reload();
     this.nuser = new DeUser();
   }
 
