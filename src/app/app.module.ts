@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import { BoksComponent } from './boks/boks.component';
 import { DeAdminPanelComponent } from './de-admin-panel/de-admin-panel.component';
 import {HttpClientModule} from "@angular/common/http";
+import { DeLoginComponent } from './de-login/de-login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {HttpClientModule} from "@angular/common/http";
     KasaComponent,
     HalaComponent,
     BoksComponent,
-    DeAdminPanelComponent
+    DeAdminPanelComponent,
+    DeLoginComponent
   ],
   imports: [
     BrowserModule,
