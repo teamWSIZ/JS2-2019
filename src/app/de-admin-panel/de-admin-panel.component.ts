@@ -6,6 +6,7 @@ import {Post} from "../model/post";
 import {LogerService} from "../loger.service";
 import {DeSubject} from "../model/de-subject";
 import {DeGroup} from "../model/de-group";
+import {Score} from "../model/score";
 
 @Component({
   selector: 'app-de-admin-panel',
@@ -20,6 +21,8 @@ export class DeAdminPanelComponent implements OnInit {
   nuser: DeUser;
   groupOfEditedUser: DeGroup;
   dziwnyNapis = 'dziwna treść';
+
+  dane = [];
 
   constructor(private d: DataService,
               private http: HttpClient,
@@ -79,14 +82,36 @@ export class DeAdminPanelComponent implements OnInit {
     return JSON.stringify(this.nuser)
   }
 
-  countOfActiveUsers() : number {
+  countOfActiveUsers(): number {
     let count = 0;
-    for(let u of this.users) {
+    for (let u of this.users) {
       if (u.active === true) {
         count++;
       }
     }
     return count;
   }
+
+
+  sortUnique() {
+    this.http.get<Score[]>('http://10.10.0.55:3003/scores').subscribe(scores => {
+      let m = new Map<string, Score>();
+      for (let s of scores) {
+        let best = m.get(s.alias);
+        if (best === undefined) best = s;
+        if (s.score > best.score) best = s;
+        m.set(best.alias, best);
+      }
+      this.dane = [];
+      m.forEach((v, k, s) => {
+        this.dane.push(v);
+      });
+    });
+  }
+
+  nice() {
+    return JSON.stringify(this.dane);
+  }
+
 
 }
