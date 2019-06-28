@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import {BiedronkaComponent} from "./biedronka/biedronka.component";
 import {DeAdminPanelComponent} from "./de-admin-panel/de-admin-panel.component";
 import {DeLoginComponent} from "./de-login/de-login.component";
+import {GpassComponent} from "./gpass/gpass.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'biedronka', component: BiedronkaComponent },
   { path: 'de-admin', component: DeAdminPanelComponent },
   { path: 'de-login', component: DeLoginComponent },
+  { path: 'passwords', component: GpassComponent },
 ];
 
 @NgModule({
