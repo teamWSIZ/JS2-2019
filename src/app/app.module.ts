@@ -18,6 +18,7 @@ import { DeAdminPanelComponent } from './de-admin-panel/de-admin-panel.component
 import {HttpClientModule} from "@angular/common/http";
 import { DeLoginComponent } from './de-login/de-login.component';
 import { GpassComponent } from './gpass/gpass.component';
+import { ZaliczenieComponent } from './zaliczenie/zaliczenie.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GpassComponent } from './gpass/gpass.component';
     BoksComponent,
     DeAdminPanelComponent,
     DeLoginComponent,
-    GpassComponent
+    GpassComponent,
+    ZaliczenieComponent
   ],
   imports: [
     BrowserModule,
